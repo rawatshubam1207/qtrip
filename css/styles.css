@@ -85,7 +85,7 @@ a {
 /* hero section styling start here  */
 
 #hero-section {
-    background: url('../assets/1.jpg');
+    background: url('../assets/hero-img.jpg');
     background-size: cover;
     object-fit: contain;
     position: relative;
@@ -138,7 +138,7 @@ a {
 .city {
     cursor: pointer;
     width: 100%;
-    height: 30rem;
+    height: 40rem;
     position: relative;
 }
 
@@ -172,6 +172,12 @@ a {
     align-items: center;
     bottom: 0.75rem;
     color: #FFF;
+    transition: all 0.5s linear;
+}
+
+.city:hover.city h4 {
+    height: 50%;
+    top: 0;
 }
 
 .city img {
@@ -187,18 +193,57 @@ a {
 }
 
 
+/* adventure section styling  */
+
+#adventure-section {
+    background-color: var(--bg-clr);
+}
+
+.card-layout {
+    background: white;
+    border-radius: 0.5rem;
+}
+
+.card-layout-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+}
+
+.card-layout img {
+    height: 20rem;
+    width: 100%;
+    /* aspect-ratio: 1; */
+}
+
+
 
 
 /* media styles here  */
 
 @media(max-width: 990px) {
-    #cities-section .grid-4-column {
+
+    #cities-section .grid-4-column,
+    #adventure-section .grid-4-column {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    #adventure-section .container {
+        max-width: 68rem;
     }
 }
 
 @media(max-width: 745px) {
     #cities-section .grid-4-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 610px) {
+    #adventure-section .grid-4-column {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -221,6 +266,14 @@ a {
     #cities-section .grid-4-column {
         grid-template-columns: repeat(1, 1fr);
         width: 70vw;
+    }
+
+    #adventure-section .grid-4-column {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #adventure-section .container {
+        max-width: 48rem;
     }
 }
 
